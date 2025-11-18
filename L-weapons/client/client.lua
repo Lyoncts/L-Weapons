@@ -66,33 +66,6 @@ function CheckWeaponRestrictions()
     end
 end
 
--- Disable melee and finishers
--- CreateThread(function()
---     while true do
---         Wait(0)
---         local ped = PlayerPedId()
-
---         -- Block melee finishers
---         if IsPedPerformingStealthKill(ped) then
---             ClearPedTasksImmediately(ped)
---         end
-
---         if Config.DisableAllMelee then
---             DisableControlAction(0, 24, true)  -- Attack
---             DisableControlAction(0, 25, true)  -- Aim
---             DisableControlAction(0, 140, true) -- Melee light
---             DisableControlAction(0, 141, true) -- Melee heavy
---             DisableControlAction(0, 142, true) -- Melee alternate
---             DisableControlAction(0, 143, true) -- Melee block
---         else
---             if IsPedArmed(ped, 6) then
---                 SetPedStealthMovement(ped, false, 0)
---                 DisableControlAction(0, 36, true) -- Disable stealth mode
---             end
---         end
---     end
--- end)
-
 -- Poll for weapon switches
 CreateThread(function()
     while true do
